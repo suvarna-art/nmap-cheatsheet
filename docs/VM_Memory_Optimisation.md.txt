@@ -1,0 +1,105 @@
+# VM Memory Optimization Guide (VMware Workstation)
+
+This document explains how to optimize memory (RAM) allocation for cybersecurity lab virtual machines in **VMware Workstation**.  
+Proper memory allocation ensures smoother performance, reduced latency, and stable operation of Windows Server, Kali Linux, and other lab systems.
+
+---
+
+## Why Memory Optimization Is Important
+
+Virtual machines share memory with the host OS.  
+Incorrect memory allocation may cause:
+
+- VM freezing or lag  
+- Long boot times  
+- Black screens  
+- VMware host slowing down  
+- Applications taking too long to open  
+
+Optimizing memory prevents these issues.
+
+---
+
+## Recommended Memory Allocation (Cybersecurity VMs)
+
+| Virtual Machine | Recommended RAM | Reason |
+|-----------------|-----------------|--------|
+| **Metasploitable** | **1 GB (1024 MB)** | Lightweight Linux VM |
+| **Kali Linux** | **2–3 GB (2048–3072 MB)** | Runs security tools like Nmap, Burp, Wireshark |
+| **Windows Server 2022 – VM 01** | **4 GB (4096 MB)** | AD DS, DNS, DHCP require more RAM |
+| **Windows Server 2022 – VM 02** | **4 GB (4096 MB)** | Additional services or lab setup |
+
+If your host machine supports it:
+
+- Kali Linux ideal: **3–4 GB**
+- Windows Server ideal: **4–6 GB**
+
+---
+
+## How to Change RAM in VMware Workstation
+
+1. Power off the VM completely  
+2. Go to:
+
+VM -> Settings -> Memory
+
+3. Move the slider to the recommended value  
+4. Click **OK**  
+5. Start the VM again
+
+> You cannot change memory when VM is powered on or suspended.
+
+---
+
+## Choosing RAM Based on Host System
+
+### Host Machine: 8 GB RAM
+- Metasploitable (1 GB)
+- Kali (2 GB)
+- Windows Server (4 GB)
+
+This setup is *tight but workable*.
+
+### Host Machine: 16 GB RAM (Recommended for labs)
+- Metasploitable (1 GB)
+- Kali (3 GB)
+- Windows Server (4–6 GB)
+
+Great performance for security tools & Windows services.
+
+---
+
+## Additional VMware Workstation Settings to Improve Memory Usage
+
+### Memory Page Trimming  
+Enable:
+Edit → Preferences → Memory → Fit all virtual machine memory into reserved host RAM
+
+### Disable unnecessary services (Windows Server)
+- Windows Update  
+- Print Spooler  
+- Xbox services  
+- Telemetry services  
+
+### Increase Virtual Disk Performance
+Store VM on an **SSD**, not HDD.
+
+
+This shows hands-on testing ability.
+
+---
+
+## Summary
+
+This guide demonstrates:
+- Understanding of VM resource allocation  
+- Ability to tune VMware Workstation for cybersecurity labs  
+- Practical knowledge in optimizing Windows & Linux VMs  
+- Clear reasoning behind RAM allocation decisions  
+
+This is valuable for blue-team, SOC, and cybersecurity analyst workflow documentation.
+
+
+
+
+

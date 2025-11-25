@@ -1,0 +1,10 @@
+# Cisco Packet Tracer Access Guide
+
+## Steps to Launch Packet Tracer
+1. Open Oracle VirtualBox  
+2. Start Windows Server 2022 VM  
+3. Locate **Cisco Packet Tracer** on:  
+   - Desktop  
+   - Start Menu  
+
+Packet Tracer may take time to load on first run.  

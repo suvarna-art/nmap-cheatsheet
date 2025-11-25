@@ -1,0 +1,99 @@
+# Cyber Lab Troubleshooting Guide (VMware Workstation)
+
+This guide provides solutions to common issues encountered while working with cybersecurity labs on **VMware Workstation / VMware Workstation Pro**, including Windows Server, Kali Linux, and other lab VMs.
+
+---
+
+## 1. VM Freezing, Lagging, or Slow Response
+
+### Symptoms
+- VM takes long to load  
+- Mouse/keyboard lag  
+- Applications respond slowly  
+- Desktop icons delayed
+
+### Causes
+- Insufficient RAM or CPU  
+- Windows services loading  
+- Running multiple active VMs  
+- Background tasks on host OS  
+
+### Fix
+- Increase RAM (recommended values below)  
+- Allocate 2 CPU cores to the VM  
+- Close unnecessary apps on host machine  
+- Disable startup apps inside the VM  
+- Wait 1–2 minutes on first boot  
+
+---
+
+## 2. VM Reconnection Issues / Black Screen
+
+### Symptoms
+- VM screen freezes  
+- Sound/keyboard unresponsive  
+- “(Not responding)” on VMware title bar  
+
+### Fix
+- Switch to **Full Screen Mode**  
+  - 'VM → Enter Full Screen'
+- Disable “**Stretch Guest**” under Display settings  
+- Restart graphics acceleration:
+  - 'VM → Settings → Display → Accelerate 3D Graphics'
+- Refresh display with:
+  - **Ctrl + Alt** (release input)
+
+---
+
+## 3. Cut/Copy/Paste Not Working (Shared Clipboard Off)
+
+VMware sometimes blocks clipboard sharing between host and VM.
+
+### Fix Options
+#### 1. Enable Clipboard Sharing
+VM -> Settings -> Optons -> Guest Isolation
+       - Enable Copy and Paste
+       - Enable Drag and Drop
+
+
+#### 2. If still not working  
+Use a workaround site like **dontpad.com**:
+1. Paste text on host  
+2. Open same URL inside VM  
+3. Copy from inside VM  
+
+---
+
+## 4. Internet/Network Connectivity Issues
+
+### Fix Checklist
+- Set Adapter to **NAT mode** 
+VM → Settings → Network Adapter → NAT
+
+- If using Bridged mode:
+- Ensure host network allows bridging
+- Reset the VM’s network adapter:
+Control Panel → Network → Adapter Settings → Disable / Enable
+
+- Reboot the VM after changes
+
+** VMware Performance Best Practices
+
+✔ Keep at least **2–4 GB free RAM** for your host OS  
+✔ Allocate **2 CPU cores** (not all cores)  
+✔ Use **SSD** instead of HDD  
+✔ Avoid running more than 2 heavy VMs at once  
+✔ Disable unnecessary services inside Windows Server  
+
+---
+
+## Summary
+
+This troubleshooting guide covers:
+- Freezing and lag solutions  
+- Network and clipboard fixes  
+- Display/graphics issues  
+- VMware-specific optimization tips  
+
+It demonstrates practical knowledge required to operate lab environments efficiently in cybersecurity workflows.
+
